@@ -24,3 +24,25 @@
 // console.log(typeof(String(-99.68)))
 // console.log(typeof(Number("90")))
 // console.log(Boolean(0),typeof(Boolean(1)))
+
+
+//Objects
+var cars = {
+    car : "galado",
+    speed : "300kph",
+    drive : '4wd',
+    manufacture : {
+        name : "lamborgini",
+        location : "luxenborg",
+        cartypes : "4"
+    },
+    applyBrakes : function (){
+        setTimeout (function (){
+            console.log("brakes applied");
+        },10000)
+    }
+    
+}
+
+console.log(cars.manufacture.name)
+console.log(cars.applyBrakes())
