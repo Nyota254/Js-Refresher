@@ -190,4 +190,9 @@ for(i = 0 ; i < 16 ; i++){
 //console.log(document.getElementsByClassName("para1"))
 //using tagname
 //console.log(document.getElementsByTagName("p"))
+
+//Query selectors
+//Query selector selector selects first class matching
+//Queryselectorall
+//selects all elements that match that selector
  
