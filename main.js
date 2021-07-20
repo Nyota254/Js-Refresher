@@ -15,3 +15,12 @@
 // } else {
 //     console.log("false")
 // }
+
+
+//Type coercion explicit
+//changing type programmatically
+//String() function changes numbers or bool to string
+// e.g
+// console.log(typeof(String(-99.68)))
+// console.log(typeof(Number("90")))
+// console.log(Boolean(0),typeof(Boolean(1)))
