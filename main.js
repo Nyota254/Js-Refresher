@@ -141,6 +141,9 @@ console.log(counter)
  * "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
  */
 
+/********************************************
+ * 
+ * 
 for(i = 0 ; i < 16 ; i++){
     if(i % 3 == 0  && i % 5 == 0){
         console.log(i + "FizzBuzz")
@@ -152,3 +155,30 @@ for(i = 0 ; i < 16 ; i++){
         console.log(i)
     }
 }
+
+ */
+
+/**************************************************************************************
+ * HOISTING
+ **************************************************************************************
+ Variable hoisting
+ javascript moves variable declarations to the top
+ meaning you can use variables b4 declaring them
+ e.g
+ x = 10
+ console.log(x)
+ var x
+
+ Function hoisting
+ 
+ var total = 10;
+ var sum = function(num1,num2){
+     console.log(total)
+     total = num1+num2;
+     console.log(total)
+     var total;
+ }
+
+ sum(4,4)
+
+ */
