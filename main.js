@@ -182,3 +182,12 @@ for(i = 0 ; i < 16 ; i++){
  sum(4,4)
 
  */
+
+//  selecting html elements
+// using id
+//  document.getElementById("top-bar")
+// using class
+//console.log(document.getElementsByClassName("para1"))
+//using tagname
+//console.log(document.getElementsByTagName("p"))
+ 
