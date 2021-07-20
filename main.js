@@ -80,6 +80,9 @@
 
 //challenge gcd of 25 and 15
 
+
+/**************************************************************************************
+ 
 array15 = []
 for(i = 0 ; i < 16 ; i++){
     if (15 % i == 0 ){
@@ -104,5 +107,25 @@ var ascendingSorted = containedInBoth.sort()
 var gcd_number = ascendingSorted[ascendingSorted.length-1]
 console.log(gcd_number)
 
+*********************************************************************/
+
+
+/*Write a JavaScript program to find the number of even values in sequence before
+    the first occurrence of a given number. Use while loop
+    Array: [1,2,3,4,5,6,7,8,9,10,11,12]
+Number: 8 */
+
+var array1 = [1,2,3,4,5,6,7,8,9,10,11,12] 
+var counter = 0
+
+var pointer2 = 0 
+while(array1[pointer2] != 8){
+    if(array1[pointer2] % 2 == 0){
+        counter ++ 
+    }
+    pointer2 ++
+}
+
+console.log(counter)
 
 
