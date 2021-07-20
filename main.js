@@ -110,10 +110,15 @@ console.log(gcd_number)
 *********************************************************************/
 
 
-/*Write a JavaScript program to find the number of even values in sequence before
+
+
+/********************************************************************************************
+ 
+ 
+Write a JavaScript program to find the number of even values in sequence before
     the first occurrence of a given number. Use while loop
     Array: [1,2,3,4,5,6,7,8,9,10,11,12]
-Number: 8 */
+Number: 8 
 
 var array1 = [1,2,3,4,5,6,7,8,9,10,11,12] 
 var counter = 0
@@ -128,4 +133,22 @@ while(array1[pointer2] != 8){
 
 console.log(counter)
 
+*/
 
+/**************************************************************************
+ * Write a JavaScript program which iterates the integers from 1 to 15. But for 
+ * multiples of three print "Fizz" instead of the number and for the multiples of five print
+ * "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
+ */
+
+for(i = 0 ; i < 16 ; i++){
+    if(i % 3 == 0  && i % 5 == 0){
+        console.log(i + "FizzBuzz")
+    } else if(i % 5 == 0){
+        console.log(i + "Buzz")
+    } else if(i % 3 == 0){
+        console.log(i + "Fizz")
+    }else {
+        console.log(i)
+    }
+}
