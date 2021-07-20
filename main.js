@@ -63,4 +63,46 @@
  //.reverse()
  //sorts in descending order
 
- 
+ //loops
+ //still remember for loop
+//  for(i = 0 ; i < 101 ; i ++){
+//      console.log(i)
+//  }
+
+//While loop
+// value1 = 0
+
+// while(value1 < 50){
+//     value1++
+// }
+
+// console.log(value1)
+
+//challenge gcd of 25 and 15
+
+array15 = []
+for(i = 0 ; i < 16 ; i++){
+    if (15 % i == 0 ){
+        array15.push(i)
+    }
+}
+
+array25 = []
+for(i = 0 ; i < 26 ; i++){
+    if (25 % i == 0 ){
+        array25.push(i)
+    }
+}
+
+var containedInBoth = []
+for(i = 0 ; i < array15.length -1 ;i++){
+    if(array25.includes(array15[i])){
+        containedInBoth.push(array15[i])
+    }
+}
+var ascendingSorted = containedInBoth.sort()
+var gcd_number = ascendingSorted[ascendingSorted.length-1]
+console.log(gcd_number)
+
+
+
