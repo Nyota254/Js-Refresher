@@ -195,4 +195,18 @@ for(i = 0 ; i < 16 ; i++){
 //Query selector selector selects first class matching
 //Queryselectorall
 //selects all elements that match that selector
+
+/******************************************************
+ * Just an exercise to update html element
+
+var countDownElement = document.getElementById('countdown');
  
+var numberCountDownValue = countDownElement.innerHTML
+
+setInterval(function(){
+    numberCountDownValue = numberCountDownValue > 0 ? numberCountDownValue - 1 : 0 ;
+    countDownElement.innerHTML = numberCountDownValue;
+
+},1000)
+
+********************************************************8/
