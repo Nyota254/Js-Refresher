@@ -286,7 +286,7 @@ btn.addEventListener('click',function(){
  * focus
  * blur
  * submit
- */
+ 
 var firstName = document.getElementById('first-name');
 var namesForm = document.getElementById('names')
 
@@ -298,3 +298,21 @@ namesForm.addEventListener("submit",function(event){
     alert("oya inado kazi");
     event.preventDefault();
 })
+*/
+
+/**************
+ * Keyboard events */
+
+document.body.addEventListener("keydown",function(e){
+    var keyCode = e.key;
+    console.log(keyCode + " key down")
+})
+document.body.addEventListener("keyup",function(e){
+    var keyCode = e.key;
+    console.log(keyCode + " key uped")
+})
+document.body.addEventListener("keypress",function(e){
+    var keyCode = e.key;
+    console.log(keyCode + " key pressed")
+})
+
