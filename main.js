@@ -375,7 +375,7 @@ document.body.addEventListener("keydown",function(e){
  * appendChild end of list
  * 
  * insertBefore(newitem, item to be inserted b4) top of list 2 parameters
- */
+ 
 
 var shoppingList = document.getElementById('shopping-list')
 var btnAddList = document.getElementById('add-item')
@@ -386,5 +386,24 @@ btnAddList.addEventListener('click',function(){
     newElement.appendChild(textWritable)
     newElement.id = "item" + (shoppingList.childElementCount + 1)
     shoppingList.appendChild(newElement)
+})
+
+*******************************************************/
+
+
+var list = document.getElementById('items-list')
+var shoppingForm = document.getElementById('shopping-form')
+var shoppingItem = document.getElementById('input-item')
+
+shoppingForm.addEventListener('submit',function(e){
+    e.preventDefault()
+    if(shoppingItem.value){
+        var newShoppingItem = document.createElement('li')
+        var textWritable = document.createTextNode(shoppingItem.value)
+        newShoppingItem.appendChild(textWritable)
+        list.appendChild(newShoppingItem)
+    } else {
+        alert("Kindly fill a value")
+    }
 })
 
