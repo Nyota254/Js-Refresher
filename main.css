@@ -13,3 +13,11 @@
     text-align: center;
     margin-top: 0px;
 }
+
+.small{
+    font-size: 30px;
+}
+
+.big{
+    font-size: 100px;
+}

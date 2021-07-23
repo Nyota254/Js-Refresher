@@ -237,6 +237,10 @@ function onButtonClick(){
 btn.onclick = onButtonClick;
 
 ***********************************/
+
+/****************************************
+ * On click Listener
+
 var btn = document.getElementById("btn-click");
 var topSection = document.querySelector("div")
 
@@ -245,3 +249,33 @@ function onButtonClick(){
 }
 
 btn.addEventListener('click',onButtonClick)
+
+ **********************************************/
+
+/***************************************
+ * 
+
+
+var greetings = document.getElementById('data-link');
+
+var btn = document.getElementById('btn-click');
+
+// greetings.classList.add('big')
+
+// setTimeout(function(){
+//     greetings.classList.remove('big')
+// },1500)
+
+
+btn.addEventListener('click',function(){
+    if(greetings.classList.contains('small')){
+        greetings.classList.remove('small')
+        greetings.classList.add('big')
+
+    } else {
+        greetings.classList.remove('big')
+        greetings.classList.add('small')
+    }
+})
+
+ */
