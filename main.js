@@ -210,3 +210,19 @@ setInterval(function(){
 },1000)
 
 ********************************************************/
+
+/**************************************************************
+ 
+var countDownValue = document.getElementById('countdown');
+
+var countDownValueNumber = countDownValue.innerHTML;
+
+console.log(countDownValueNumber);
+
+setInterval(function(){
+    countDownValueNumber = countDownValueNumber > 0 ? countDownValueNumber - 1 : 0 ;
+    countDownValue.innerHTML = countDownValueNumber
+
+},1000)
+
+***********************************************************/
