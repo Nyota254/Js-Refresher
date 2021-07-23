@@ -320,7 +320,7 @@ document.body.addEventListener("keypress",function(e){
 
 /****************************************************8
  * Piano challenge
- */
+ 
 
 document.body.addEventListener("keydown",function(e){
     var keyPressed = e.key;
@@ -353,3 +353,38 @@ document.body.addEventListener("keydown",function(e){
         audio.play()
     }
 })
+
+*/
+
+// var hoverMe = document.getElementById("hover-me");
+
+// hoverMe.addEventListener("mouseover",function(){
+    
+//     hoverMe.classList.add('hovering-now')
+//     if( hoverMe.classList.contains('hover-me')){
+//         hoverMe.classList.add('hovering-now')
+//     } else {
+//         hoverMe.classList.add('hover-me')
+//     }
+    
+// })
+
+/******************
+ * Adding html elements in vanilla javascript
+ * 
+ * appendChild end of list
+ * 
+ * insertBefore(newitem, item to be inserted b4) top of list 2 parameters
+ */
+
+var shoppingList = document.getElementById('shopping-list')
+var btnAddList = document.getElementById('add-item')
+
+btnAddList.addEventListener('click',function(){
+    var newElement = document.createElement('li')
+    var textWritable = document.createTextNode('List item ' + (shoppingList.childElementCount + 1))
+    newElement.appendChild(textWritable)
+    newElement.id = "item" + (shoppingList.childElementCount + 1)
+    shoppingList.appendChild(newElement)
+})
+
