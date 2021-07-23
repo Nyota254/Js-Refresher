@@ -301,7 +301,7 @@ namesForm.addEventListener("submit",function(event){
 */
 
 /**************
- * Keyboard events */
+ * Keyboard events 
 
 document.body.addEventListener("keydown",function(e){
     var keyCode = e.key;
@@ -316,3 +316,40 @@ document.body.addEventListener("keypress",function(e){
     console.log(keyCode + " key pressed")
 })
 
+************/
+
+/****************************************************8
+ * Piano challenge
+ */
+
+document.body.addEventListener("keydown",function(e){
+    var keyPressed = e.key;
+    if(keyPressed == "A" || keyPressed == "a"){
+        var audio = new Audio('./assets/Drumset Audio Files/clap.wav')
+        audio.play()
+    } else if(keyPressed == "S" || keyPressed == "s"){
+        var audio = new Audio('./assets/Drumset Audio Files/tink.wav') 
+        audio.play()
+    } else if(keyPressed == "D" || keyPressed == "d"){
+        var audio = new Audio('./assets/Drumset Audio Files/snare.wav') 
+        audio.play()
+    } else if(keyPressed == "F" || keyPressed == "f"){
+        var audio = new Audio('./assets/Drumset Audio Files/ride.wav') 
+        audio.play()
+    } else if(keyPressed == "G" || keyPressed == "g"){
+        var audio = new Audio('./assets/Drumset Audio Files/openhat.wav') 
+        audio.play()
+    } else if(keyPressed == "H" || keyPressed == "h"){
+        var audio = new Audio('./assets/Drumset Audio Files/kick.wav') 
+        audio.play()
+    } else if(keyPressed == "J" || keyPressed == "j"){
+        var audio = new Audio('./assets/Drumset Audio Files/hihat.wav') 
+        audio.play()
+    } else if(keyPressed == "K" || keyPressed == "k"){
+        var audio = new Audio('./assets/Drumset Audio Files/tom.wav') 
+        audio.play()
+    } else if(keyPressed == "L" || keyPressed == "l"){
+        var audio = new Audio('./assets/Drumset Audio Files/boom.wav') 
+        audio.play()
+    }
+})

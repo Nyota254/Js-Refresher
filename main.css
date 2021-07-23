@@ -1,14 +1,17 @@
-/* .background1 {
-    background-image: url(assets/quote.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-} */
-
 .background1 {
-    background-color: aqua;
+    background-image: url(./assets/quotecropped.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
 }
 
-#countdown {
+/* .background1 {
+    background-color: aqua;
+} */
+
+/* #countdown {
     font-size: 500px;
     text-align: center;
     margin-top: 0px;
@@ -20,4 +23,25 @@
 
 .big{
     font-size: 100px;
+} */
+
+.heading-one {
+    color: white;
+    text-align: center;
+}
+
+.music-section {
+    display: flex;
+    justify-content: center;
+}
+
+.music-box{
+    border:1px solid white;
+    width: 100px;
+    color: white;
+    margin-top: 180px;
+}
+
+.music-content{
+    text-align: center;
 }
