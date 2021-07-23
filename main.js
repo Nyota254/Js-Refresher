@@ -226,3 +226,22 @@ setInterval(function(){
 },1000)
 
 ***********************************************************/
+
+/******** 
+var btn = document.getElementById("btn-click");
+
+function onButtonClick(){
+    alert("Button clicked");
+}
+
+btn.onclick = onButtonClick;
+
+***********************************/
+var btn = document.getElementById("btn-click");
+var topSection = document.querySelector("div")
+
+function onButtonClick(){
+    topSection.style.backgroundColor = "rgb("+ Math.floor(Math.random()*255)+","+ Math.floor(Math.random()*255)+","+ Math.floor(Math.random()*255)+")"
+}
+
+btn.addEventListener('click',onButtonClick)
