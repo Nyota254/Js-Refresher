@@ -279,3 +279,22 @@ btn.addEventListener('click',function(){
 })
 
  */
+
+/********
+ * form events
+ * input
+ * focus
+ * blur
+ * submit
+ */
+var firstName = document.getElementById('first-name');
+var namesForm = document.getElementById('names')
+
+firstName.addEventListener("input",function(event){
+    console.log(event.target.value);
+})
+
+namesForm.addEventListener("submit",function(event){
+    alert("oya inado kazi");
+    event.preventDefault();
+})
