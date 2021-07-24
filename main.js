@@ -400,6 +400,7 @@ var shoppingForm = document.getElementById('shopping-form')
 var shoppingItem = document.getElementById('input-item')
 var updateItem = document.getElementById('btn-update')
 var addItem = document.getElementById('btn-submit')
+var deleteItem = document.getElementById('btn-delete')
 
 
 function createNewItem(){
@@ -436,3 +437,8 @@ updateItem.addEventListener("click",function(e){
     shoppingItem.value="";
 })
 
+deleteItem.addEventListener("click",function(e){
+    e.preventDefault()
+    var firstElement = list.firstElementChild;
+    list.removeChild(firstElement)
+})
