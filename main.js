@@ -390,20 +390,49 @@ btnAddList.addEventListener('click',function(){
 
 *******************************************************/
 
-
+/****************************************************************
+ * 
+ * SIMPLE TO DO LIST
+ 
+*/
 var list = document.getElementById('items-list')
 var shoppingForm = document.getElementById('shopping-form')
 var shoppingItem = document.getElementById('input-item')
+var updateItem = document.getElementById('btn-update')
+var addItem = document.getElementById('btn-submit')
 
-shoppingForm.addEventListener('submit',function(e){
+
+function createNewItem(){
+    var newShoppingItem = document.createElement('li')
+    var textWritable = document.createTextNode(shoppingItem.value)
+    newShoppingItem.appendChild(textWritable)
+    // list.appendChild(newShoppingItem)
+
+    return newShoppingItem;
+}
+
+addItem.addEventListener('click',function(e){
     e.preventDefault()
     if(shoppingItem.value){
         var newShoppingItem = document.createElement('li')
         var textWritable = document.createTextNode(shoppingItem.value)
         newShoppingItem.appendChild(textWritable)
         list.appendChild(newShoppingItem)
+
+        shoppingItem.value="";
+
     } else {
         alert("Kindly fill a value")
     }
+})
+
+
+updateItem.addEventListener("click",function(e){
+    e.preventDefault()
+    var firstElement = list.firstElementChild;
+    var newItem = createNewItem();
+
+    list.replaceChild(newItem,firstElement)
+    shoppingItem.value="";
 })
 
