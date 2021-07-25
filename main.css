@@ -68,8 +68,16 @@
 .watch-img{
     width: 500px;
     height: 500px;
+    position:relative
 }
 
 .margin-info {
     margin-top: 75px;
+}
+
+#time {
+    bottom: 300px;
+    left: 190px;
+    position:absolute;
+    color: green;
 }
