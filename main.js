@@ -394,7 +394,7 @@ btnAddList.addEventListener('click',function(){
  * 
  * SIMPLE TO DO LIST
  
-*/
+
 var list = document.getElementById('items-list')
 var shoppingForm = document.getElementById('shopping-form')
 var shoppingItem = document.getElementById('input-item')
@@ -442,3 +442,60 @@ deleteItem.addEventListener("click",function(e){
     var firstElement = list.firstElementChild;
     list.removeChild(firstElement)
 })
+
+*/
+
+/**************************************************
+ * BROWSER OBJECT MODEL
+ */
+
+
+
+/*****************************************************
+ * SMART WATCH CHALLENGE
+ * 
+ */
+
+function updateTime(k) {
+    if (k < 10) {
+      return "0" + k;
+    }
+    else {
+      return k;
+    }
+}
+
+// function currentTime(){
+//     var date = new Date();
+//     var hour = date.getHours();
+//     var minutes = date.getMinutes();
+//     var seconds = date.getSeconds();
+//     hour = updateTime(hour);
+//     min = updateTime(minutes);
+//     sec = updateTime(seconds);
+//     var timeFormart = hour + ":" + min + ":" + sec;
+//     // var timeForm = document.getElementsByClassName('time').innerHTML = timeFormart;
+//     var timeElement = document.getElementById("time")
+//     // console.log(timeFormart)
+//     // timeSection.appendChild(timeFormart)
+//     console.log(timeElement.innerText == "")
+//     console.log(timeElement.innerText)
+
+//     setTimeout(function(){
+//         if(timeElement.innerText == ""){
+//             timeElement.appendChild(document.createTextNode(timeFormart))
+//             currentTime()
+//         } else {
+//             var newElement = document.createElement('h2')
+//             newElement.id = "time"
+//             var parentElement = document.getElementsByClassName('paro')
+//             var childElement = document.querySelector('#time')
+//             parentElement.removeChild(childElement)
+//             newElement.appendChild(document.createTextNode(timeFormart))
+//             timeElement.append(newElement)
+//             currentTime()
+//         }
+//     },1000)
+// }
+
+// currentTime();

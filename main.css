@@ -55,3 +55,21 @@
     background-color: red;
     color:purple;
 }
+
+.btn-brown {
+    background-color:brown;
+}
+
+.btn-yellow{
+    background-color: yellow;
+    margin-top: 20px;
+}
+
+.watch-img{
+    width: 500px;
+    height: 500px;
+}
+
+.margin-info {
+    margin-top: 75px;
+}
