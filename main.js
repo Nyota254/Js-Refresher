@@ -520,3 +520,32 @@ function currentTime(){
 }
 
 currentTime();
+
+var redWatch = document.getElementsByClassName('btn-danger-custom')[0]
+var purpleWatch = document.getElementsByClassName('btn-secondary-custom')[0]
+var blueWatch = document.getElementsByClassName('btn-primary-custom')[0]
+var pinkWatch = document.getElementsByClassName('btn-brown-custom')[0]
+var blackWatch = document.getElementsByClassName('btn-dark-custom')[0]
+
+
+
+redWatch.addEventListener('click',function(){
+    document.getElementById('watch-img').src = "./assets/watches/red.png"
+})
+
+purpleWatch.addEventListener('click',function(){
+    document.getElementById('watch-img').src = "./assets/watches/purple.png"
+})
+
+blueWatch.addEventListener('click',function(){
+    document.getElementById('watch-img').src = "./assets/watches/blue.png"
+})
+
+blackWatch.addEventListener('click',function(){
+    document.getElementById('watch-img').src = "./assets/watches/black.png"
+})
+
+pinkWatch.addEventListener('click',function(){
+    document.getElementById('watch-img').src = "./assets/watches/pink.png"
+})
+

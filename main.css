@@ -81,3 +81,23 @@
     position:absolute;
     color: green;
 }
+
+.btn-dark-custom{
+    background-color: #23211f;
+}
+
+.btn-danger-custom{
+    background-color: #ca3d22;
+}
+
+.btn-secondary-custom{
+    background-color: #8a5362;
+}
+
+.btn-brown-custom{
+    background-color:#e9c7be;
+}
+
+.btn-primary-custom{
+    background-color: #565681;
+}
