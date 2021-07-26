@@ -454,7 +454,7 @@ deleteItem.addEventListener("click",function(e){
 /*****************************************************
  * SMART WATCH CHALLENGE
  * 
- */
+
 
 function updateTime(k) {
     if (k < 10) {
@@ -521,3 +521,38 @@ pinkWatch.addEventListener('click',function(){
     document.getElementById('watch-img').src = "./assets/watches/pink.png"
 })
 
+
+
+ SMART WATCH CHALLENGE END
+ ************************************************************************************/
+
+ /******************************8
+  * Brush up on oop in js
+  * 
+  * creating a video object with everything it needs
+  * 
+  */
+
+
+ var video = {
+     videoName: "Heavy Js Refresher",
+     fileFormat : "mp4",
+     duration: "2:48",
+     owner: "Nyota",
+
+     getVideoName: function(){
+         return this.videoName
+     },
+     getFileFormart:function(){
+         return this.fileFormat
+     },
+     getDuration:function(){
+         return this.duration
+     },
+     getOwner:function(){
+        return this.owner
+     }
+
+ }
+
+ console.log(video.getVideoName());
