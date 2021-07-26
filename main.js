@@ -623,3 +623,44 @@ pinkWatch.addEventListener('click',function(){
 
 
 ***************/
+
+/*********************
+ * AJAX VANILLA JS
+ * Api calls
+ */
+
+var todoList = document.getElementById('todo-list')
+
+function addItem(todoId,todoData){
+    var elementTodo = document.createElement('li');
+    var todoData = document.createTextNode(todoData)
+    elementTodo.id = todoId
+    elementTodo.appendChild(todoData)
+
+    return todoList.appendChild(elementTodo)
+}
+
+function getTodoList(){
+    var http = new XMLHttpRequest()
+
+    http.onreadystatechange = function(){
+        if(this.readyState === 4){
+            if(this.status === 200){
+                var response = JSON.parse(this.responseText)
+
+                for(i = 0 ; i < response.length ; i ++){
+                    // console.log(response[i].id + ' ' +  response[i].title )
+                    addItem(response[i].id,response[i].title)
+                }
+
+            } else {
+                console.log('Failure')
+            }
+        }
+    }
+
+    http.open('GET','https://jsonplaceholder.typicode.com/todos',true)
+    http.send()
+}
+
+getTodoList();
