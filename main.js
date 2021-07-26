@@ -533,7 +533,7 @@ pinkWatch.addEventListener('click',function(){
   * 
   */
 
-
+/*
  var video = {
      videoName: "Heavy Js Refresher",
      fileFormat : "mp4",
@@ -554,5 +554,72 @@ pinkWatch.addEventListener('click',function(){
      }
 
  }
-
  console.log(video.getVideoName());
+*********/
+ 
+
+ /************
+  * this keyword refers to property thats a part of the object 
+  * and doesn't pick from global
+  */
+/********* 
+ * 
+ * 
+  var video = {
+    videoName: "Heavy Js Refresher",
+    fileFormat : "mp4",
+    duration: "2:48",
+    owner: "Nyota",
+  }
+
+
+**************/
+
+
+
+  /**************************
+  * Creating a simple constructor vanilla js
+  * Other programming languages its whats known as a class
+  */
+
+  /*
+  function Video(vName,vFileFormart,vDuration,vOwner) {
+    this.videoName = vName;
+    this.fileFormart = vFileFormart;
+    this.duration = vDuration;
+    this.owner = vOwner
+
+    this.adsPoint = function(){
+        console.log(this.duration - 2)
+    }
+  }
+
+  var jessVideo = new Video('Data Science','mp4',9.00,'jess');
+  console.log(jessVideo)
+  jessVideo.adsPoint()
+  ********************************/
+
+
+  /*********************
+   * simple inheritance and prototype chain
+   * 
+   * top code make it prototype chained to avoid duplicate code
+   */
+
+  /***********
+   function Video(vName,vFileFormart,vDuration,vOwner) {
+    this.videoName = vName;
+    this.fileFormart = vFileFormart;
+    this.duration = vDuration;
+    this.owner = vOwner
+  }
+
+  Video.prototype.adsPoint = function () {
+    console.log(this.duration - 2)
+  }
+
+  var mosesVideo = new Video('Data Science','mp4',9.00,'moses');
+  mosesVideo.adsPoint()
+
+
+***************/
