@@ -465,40 +465,6 @@ function updateTime(k) {
     }
 }
 
-// function currentTime(){
-//     var date = new Date();
-//     var hour = date.getHours();
-//     var minutes = date.getMinutes();
-//     var seconds = date.getSeconds();
-//     hour = updateTime(hour);
-//     min = updateTime(minutes);
-//     sec = updateTime(seconds);
-//     var timeFormart = hour + ":" + min + ":" + sec;
-//     // var timeForm = document.getElementsByClassName('time').innerHTML = timeFormart;
-//     var timeElement = document.getElementById("time")
-//     // console.log(timeFormart)
-//     // timeSection.appendChild(timeFormart)
-//     console.log(timeElement.innerText == "")
-//     console.log(timeElement.innerText)
-
-//     setTimeout(function(){
-//         if(timeElement.innerText == ""){
-//             timeElement.appendChild(document.createTextNode(timeFormart))
-//             currentTime()
-//         } else {
-//             var newElement = document.createElement('h2')
-//             newElement.id = "time"
-//             var parentElement = document.getElementsByClassName('paro')
-//             var childElement = document.querySelector('#time')
-//             parentElement.removeChild(childElement)
-//             newElement.appendChild(document.createTextNode(timeFormart))
-//             timeElement.append(newElement)
-//             currentTime()
-//         }
-//     },1000)
-// }
-
-// currentTime();
 
 function currentTime(){
     var date = new Date();
@@ -520,6 +486,12 @@ function currentTime(){
 }
 
 currentTime();
+
+var heartRate = document.getElementsByClassName('btn-heart-rate')[0]
+
+heartRate.addEventListener('click',function(){
+    document.getElementById('time').innerHTML = '78';
+})
 
 var redWatch = document.getElementsByClassName('btn-danger-custom')[0]
 var purpleWatch = document.getElementsByClassName('btn-secondary-custom')[0]
