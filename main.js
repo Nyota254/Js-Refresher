@@ -41,7 +41,7 @@
 //             console.log("brakes applied");
 //         },10000)
 //     }
-    
+
 // }
 
 // console.log(cars.manufacture.name)
@@ -55,16 +55,16 @@
 //                       2.End of where to start working on arrau
 //                       3.From here means it will add something from specified points
 
- //.concat()
- //contacts two lists together
+//.concat()
+//contacts two lists together
 
- //.sort()
- //sorts in ascending
- //.reverse()
- //sorts in descending order
+//.sort()
+//sorts in ascending
+//.reverse()
+//sorts in descending order
 
- //loops
- //still remember for loop
+//loops
+//still remember for loop
 //  for(i = 0 ; i < 101 ; i ++){
 //      console.log(i)
 //  }
@@ -359,14 +359,14 @@ document.body.addEventListener("keydown",function(e){
 // var hoverMe = document.getElementById("hover-me");
 
 // hoverMe.addEventListener("mouseover",function(){
-    
+
 //     hoverMe.classList.add('hovering-now')
 //     if( hoverMe.classList.contains('hover-me')){
 //         hoverMe.classList.add('hovering-now')
 //     } else {
 //         hoverMe.classList.add('hover-me')
 //     }
-    
+
 // })
 
 /******************
@@ -526,12 +526,12 @@ pinkWatch.addEventListener('click',function(){
  SMART WATCH CHALLENGE END
  ************************************************************************************/
 
- /******************************8
-  * Brush up on oop in js
-  * 
-  * creating a video object with everything it needs
-  * 
-  */
+/******************************8
+ * Brush up on oop in js
+ * 
+ * creating a video object with everything it needs
+ * 
+ */
 
 /*
  var video = {
@@ -556,12 +556,12 @@ pinkWatch.addEventListener('click',function(){
  }
  console.log(video.getVideoName());
 *********/
- 
 
- /************
-  * this keyword refers to property thats a part of the object 
-  * and doesn't pick from global
-  */
+
+/************
+ * this keyword refers to property thats a part of the object 
+ * and doesn't pick from global
+ */
 /********* 
  * 
  * 
@@ -577,36 +577,36 @@ pinkWatch.addEventListener('click',function(){
 
 
 
-  /**************************
-  * Creating a simple constructor vanilla js
-  * Other programming languages its whats known as a class
-  */
+/**************************
+ * Creating a simple constructor vanilla js
+ * Other programming languages its whats known as a class
+ */
 
-  /*
-  function Video(vName,vFileFormart,vDuration,vOwner) {
-    this.videoName = vName;
-    this.fileFormart = vFileFormart;
-    this.duration = vDuration;
-    this.owner = vOwner
+/*
+function Video(vName,vFileFormart,vDuration,vOwner) {
+  this.videoName = vName;
+  this.fileFormart = vFileFormart;
+  this.duration = vDuration;
+  this.owner = vOwner
 
-    this.adsPoint = function(){
-        console.log(this.duration - 2)
-    }
+  this.adsPoint = function(){
+      console.log(this.duration - 2)
   }
+}
 
-  var jessVideo = new Video('Data Science','mp4',9.00,'jess');
-  console.log(jessVideo)
-  jessVideo.adsPoint()
-  ********************************/
+var jessVideo = new Video('Data Science','mp4',9.00,'jess');
+console.log(jessVideo)
+jessVideo.adsPoint()
+********************************/
 
 
-  /*********************
-   * simple inheritance and prototype chain
-   * 
-   * top code make it prototype chained to avoid duplicate code
-   */
+/*********************
+ * simple inheritance and prototype chain
+ * 
+ * top code make it prototype chained to avoid duplicate code
+ */
 
-  /***********
+/***********
    function Video(vName,vFileFormart,vDuration,vOwner) {
     this.videoName = vName;
     this.fileFormart = vFileFormart;
@@ -627,7 +627,7 @@ pinkWatch.addEventListener('click',function(){
 /*********************
  * AJAX VANILLA JS
  * Api calls
- */
+ 
 
 var todoList = document.getElementById('todo-list')
 
@@ -664,3 +664,125 @@ function getTodoList(){
 }
 
 getTodoList();
+
+*/
+
+/****************************
+ * TOUCH UI VANILLA JS ATTEMPT
+ * 
+ */
+
+var profiles = document.getElementById('profile-cards')
+var editForm = document.getElementById('patch-form')
+
+function addProfiles(profileId,
+                    profileName, 
+                    profileOccupation, 
+                    profileEmail, 
+                    profileBio, 
+                    ProfileCreatedtime, 
+                    profileUpdatedtime) {
+
+    var addTag = document.createElement('div');
+    addTag.className = "col-md-4"
+    var addTagCard = document.createElement('div');
+    addTagCard.className = "card";
+    var headName = document.createElement("h5");
+    headName.className = "card-title";
+    var content = document.createElement("p");
+    content.className = "card-text";
+    var breakGap = document.createElement('br')
+    var profileHeading = document.createTextNode("profileName: " + profileName);
+    var contentOccupation = document.createTextNode("profileOccupation: " + profileOccupation)
+    headName.appendChild(profileHeading)
+    content.appendChild(contentOccupation)
+    
+    var contentEmail = document.createElement("p");
+    contentEmail.className = "card-text";
+    var contentEmailText = document.createTextNode("profileEmail: " + profileEmail)
+    contentEmail.appendChild(contentEmailText)
+
+    var contentBio = document.createElement("p");
+    contentBio.className = "card-text";
+    var contentBioText = document.createTextNode("profileBio: " + profileBio)
+    contentBio.appendChild(contentBioText)
+
+    var contentProfileCreated = document.createElement("p");
+    contentProfileCreated.className = "card-text";
+    var contentProfileCreatedText = document.createTextNode("Profile Created: " + ProfileCreatedtime)
+    contentProfileCreated.appendChild(contentProfileCreatedText)
+
+    var contentUpdatedT = document.createElement("p");
+    contentUpdatedT.className = "card-text";
+    var contentUpdatedTText = document.createTextNode("profileEmail: " + profileUpdatedtime)
+    contentUpdatedT.appendChild(contentUpdatedTText)
+
+    var buttonEdit = document.createElement('button')
+    buttonEdit.className = "btn btn-primary";
+    buttonEdit.id = profileId;
+    buttonEdit.textContent = "Edit Bio";
+
+    var formInputBio = document.createElement("input");
+    formInputBio.type = "text";
+    formInputBio.name = "bio";
+    formInputBio.id = "bio"+profileId;
+    formInputBio.placeholder = "Bio here";
+
+
+    editForm.innerHTML = `<label for="bio">Bio</label>
+    <input type="text" name="bio" id="bio">
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name">
+    <label for="bio">Occupation</label>
+    <input type="text" name="occupation" id="occupation">
+    <button type="submit" id="${profileId}">Edit</button>`
+
+    
+
+    // var profileData = document.createTextNode("Profile occupation: " + profileOccupation + "Profile Email: " + profileEmail + "Profile bio: " + profileBio)
+    // addTag.appendChild(profileData)
+    var formEditing = editForm.appendChild(formInputBio)
+    return profiles.append(addTag,addTagCard,headName,content,contentEmail,contentBio,contentProfileCreated,contentUpdatedT,buttonEdit,formEditing)
+    // addTag.class = 'col-md-4';
+    // return profiles.innerHTML = `<div id="col-md-4"><div class="card"><div class="card-body"><h5 class="card-title">${profileName}</h5><p class="card-text">Occupation:${profileOccupation} Email:${profileEmail} Bio:${profileBio} Time Profile Created:${ProfileCreatedtime} Updated at: ${profileUpdatedtime}</p><button type="button" class="btn btn-primary" id="${profileId}">Button</button></div></div></div>`
+
+}
+
+function getProfiles() {
+    var http = new XMLHttpRequest()
+
+    http.onreadystatechange = function () {
+        if (this.readyState === 4) {
+            if (this.status === 200) {
+                var response = JSON.parse(this.responseText)
+
+                for (i = 0; i < response.length; i++) {
+                    addProfiles(response[i].id, response[i].name, response[i].occupation, response[i].email, response[i].bio, response[i].created_at, response[i].updated_at)
+                    // console.log(response[i].id, response[i].name, response[i].occupation, response[i].email, response[i].bio, response[i].created_at, response[i].updated_at)
+                }
+            }
+        }
+    }
+
+    http.open('GET', 'https://ti-react-test.herokuapp.com/users', true)
+    http.send()
+}
+
+function patchProfile(){
+    var http = new XMLHttpRequest()
+
+    http.open('PATCH','https://ti-react-test.herokuapp.com/users/36',true)
+    var data = JSON.stringify({
+        "bio":"Hi i am js dev",
+        "email":"js@programmer.ke",
+        "occupation": "Developer",
+    })
+    http.send(data)
+}
+
+getProfiles();
+
+// patchProfile();
+// addProfiles();
