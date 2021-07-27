@@ -670,7 +670,7 @@ getTodoList();
 /****************************
  * TOUCH UI VANILLA JS ATTEMPT
  * 
- */
+ 
 
 var profiles = document.getElementById('profile-cards')
 var editForm = document.getElementById('patch-form')
@@ -786,3 +786,66 @@ getProfiles();
 
 // patchProfile();
 // addProfiles();
+
+*/
+
+var inputItem = document.getElementById("add-item");
+var list = document.getElementById("todo-list");
+var addItemButton = document.getElementById("btn-add");
+
+addItemButton.addEventListener("click",function(e){
+    e.preventDefault();
+    // var elementList = document.createElement("li");
+    // var item = document.createTextNode(inputItem.value);
+    // elementList.appendChild(item)
+    // list.appendChild(elementList);
+    postTodoItems();
+})
+
+
+function appendItems(listItem){
+    var elementList = document.createElement("li");
+    var item = document.createTextNode(listItem);
+    elementList.appendChild(item)
+    list.appendChild(elementList);
+}
+
+
+function getTodoItems(){
+    var http = new XMLHttpRequest();
+    
+    http.onreadystatechange = function(){
+
+        if(this.readyState === 4){
+            var response = JSON.parse(this.responseText)
+
+            for(i=0 ; i < response.length ; i++){
+                appendItems(response[i].title)
+                // console.log(response[i])
+            }
+        } 
+    }
+
+    http.open('GET','https://jsonplaceholder.typicode.com/todos',true);
+    http.send();
+}
+
+function postTodoItems(){
+    var http = new XMLHttpRequest();
+    
+    http.onreadystatechange = function(){
+
+        if(this.readyState === 4){
+            var response = JSON.parse(this.responseText)
+            appendItems(inputItem.value)
+        }
+    }
+
+    http.open('POST','https://jsonplaceholder.typicode.com/todos',true)
+    var data = JSON.stringify({
+        "title": inputItem.value
+    })
+    http.send(data)
+}
+
+getTodoItems();
