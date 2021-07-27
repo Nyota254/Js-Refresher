@@ -101,3 +101,8 @@
 .btn-primary-custom{
     background-color: #565681;
 }
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}

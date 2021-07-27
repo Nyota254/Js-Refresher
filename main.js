@@ -789,6 +789,12 @@ getProfiles();
 
 */
 
+
+
+/******************************************************
+ * TODO LIST IMPLEMENTING BOTH GET AND POST APIS VANILLA JS
+ * 
+ 
 var inputItem = document.getElementById("add-item");
 var list = document.getElementById("todo-list");
 var addItemButton = document.getElementById("btn-add");
@@ -849,3 +855,103 @@ function postTodoItems(){
 }
 
 getTodoItems();
+
+***************************************************************************/
+
+
+
+
+/**************************************************************************
+ * JQUERY REFRESH
+ * ABOVE TODO LIST REWRITTEN WITH JQUERY
+ */
+
+$(document).ready(function(){
+    var addItem = $("#add-item")
+    var list = $("#todo-list")
+    var addButton = $("#btn-add")
+    
+
+    $.get("https://jsonplaceholder.typicode.com/todos",function(data,status){
+        for(i = 0 ; i < data.length ; i++){
+            list.append("<li>" + data[i].title + "</li>")
+        }
+        
+    })
+
+    var postData = {
+        "title": addItem.val()
+    }
+
+
+    addButton.click(function(e){
+        e.preventDefault()
+
+        $.post("https://jsonplaceholder.typicode.com/todos", postData ,function(data,status){
+            
+            list.append("<li>" + addItem.val() + "</li>")
+
+    })
+    })
+    
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $(document).ready(function(){
+    // var list = $('#todo-list')
+    // var addItem = $('#add-item')
+    // var  list = $('#todo-list')
+    // var justAnElement = "<li>Make a change</li>"
+    // list.append(justAnElement)//can also append multiple elements
+
+    // var elementList = $('#first-thing').html()
+    // console.log(elementList)
+    //Remove elements using JQuery
+    // list.remove();
+    // Method chaining in jquery
+    // $('li').first().remove() remove item from first position
+    // $('li').last().remove() removes item from last position
+    // $('li').eq(0).remove() removes item from specified position
+
+    //.css() method jquery
+    //check specific style
+    // console.log($('li').css('font-size'))
+    //add style to elements
+    // $('li').css('font-size','40px')
+    //multiple styles pass object
+    // $('li').css({
+    //     'font-size':'40px',
+    //     'color': 'blue',
+    // })
+    //addClass()
+    // $('body').addClass('dark-mode')
+
+    // setTimeout(function(){
+    //     $('body').removeClass('dark-mode')
+    // },1000)
+
+    //toggle class
+    // setInterval(function(){
+    //     $('body').toggleClass('dark-mode')
+    // },2000)
+
+    //HTML events
+    // $('#btn-add').click(function(){
+    //    //code here after button
+    // })
+
+// })
