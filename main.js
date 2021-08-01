@@ -864,7 +864,7 @@ getTodoItems();
 /**************************************************************************
  * JQUERY REFRESH
  * ABOVE TODO LIST REWRITTEN WITH JQUERY
- */
+
 
 $(document).ready(function(){
     var addItem = $("#add-item")
@@ -897,18 +897,7 @@ $(document).ready(function(){
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+*****************************************************************************************/
 
 
 // $(document).ready(function(){
@@ -955,3 +944,183 @@ $(document).ready(function(){
     // })
 
 // })
+
+/***********************************************************************************8
+ * Regex101.com
+ * 
+ * [] => range
+ * 
+ * [A-Z] => words that start with any word in range
+ * 
+ * [A-Z]ame => words macthing the partern either ending start
+ * 
+ * [0-9] => Numbers
+ * 
+ * [a-z][0-9] => alphabet followed by numbers
+ *  
+ */
+
+
+/********************************************************************
+ * ES6 refresh Prep for React Js
+ * 
+ * Babel Preprocesser converts es6 for backwards compatability
+ * 
+ * let const
+ * 
+ * Hoisting is unsupported
+ * 
+ * Template strings
+ * 
+ * backticks
+ * const name = "john"
+ * const greetings = `Hello ${name}`
+ * 
+ * functions can also be called
+ * e.g 
+ * const moreGreetings = `Hello ${yourName()}` 
+ * 
+ * Arrow Functions
+ * const greetings = name = return `Hello ${name}`
+ * 
+ * Rest and Spread Operator
+ *
+ * REST OPERATOR
+
+const mSum = (...args) => {
+    sum = 0;
+    for(let i = 0 ; i < args.length; i++){
+        sum += args[i]
+    }
+    return sum
+}
+
+console.log(mSum(1,2,3,4,5,6,7))
+
+*
+*Spread Operator
+
+allows working with objects and arrays
+
+let array1 = [0,1,2,3,4]
+let array2 = [...array1]
+
+join arrays
+
+let array1 = [0,1,2,3,4]
+let array2 = [5,6,7,8,9]
+
+let array3 = [...array1,...array2]
+console.log(array3)
+
+can also join two objects
+
+
+ES6 Destructuring
+
+map() function
+iterates array for us inorder to pass a callback function 
+to perform some operations for us returning the new array
+
+e.g 
+currentArray = [0,1,3,4,5,6,7]
+
+let newArr = currentArray.map(data,pos) => {
+    console.log(`item at pos: ${pos} is ${data}`);
+    return data * 2;
+}
+
+reduce() function
+
+
+const array1 = [1,2,3,4,5,6,7]
+
+let array2 = array1.reduce((acc,item) => {
+    // console.log(item);
+    // console.log(acc);
+    return acc + item
+})
+
+console.log(array2)
+
+filter() function
+Returns new array based on some conditions if true
+e.g
+
+returns an array of even numbers
+
+
+const oldArray = [0,1,2,3,4,5,6,7]
+const newArray = oldArray.filter(item => {
+    return item % 2 === 0;
+})
+
+console.log(newArray)
+
+find() and findIndex() functions
+search functions
+find() -> returns element that matches the condition
+findIndex() -> returns index that matches the condition
+
+
+const newArray = [-1,-2,-3,-4,1,2,3,4]
+
+let conditionTrue = newArray.findIndex(item => {
+    return (item % 3 === 0 && item > 0 );
+})
+
+console.log(conditionTrue)
+
+classes in ES6
+
+
+
+class Person {
+    constructor(name,yob){
+        this.name = name;
+        this.yob = yob;
+    }
+
+    getDetails = () => {
+        return `Hi there ${this.name} your age is ${2021 - this.yob}`
+    }
+}
+
+// let citizen = new Person("bill",1990);
+
+// console.log(citizen.getDetails())
+
+//Inheritance
+
+
+
+class Pilot extends Person{
+    constructor(name,yob,experience,craft){
+        super(name,yob);
+        this.experience = experience
+        this.craft = craft
+    }
+
+    getData = () => {
+        return `Name: ${this.name}  Years of experience: ${this.experience}yrs aircraft type: ${this.craft}`;
+    }
+}
+
+let pilot1 = new Pilot("bill",1998,23,"Boeing")
+
+console.log(pilot1.getData())
+
+callback hell and promises
+states of promises
+Pending
+Fulfilled
+Rejected
+
+Using Promises
+Syntax
+const workPromise = new Promise((resolve,reject)=>{
+    promise body
+    call resolve() when operation is complete
+    call reject() when the operation is failed
+})
+*/
