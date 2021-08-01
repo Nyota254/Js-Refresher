@@ -1123,4 +1123,27 @@ const workPromise = new Promise((resolve,reject)=>{
     call resolve() when operation is complete
     call reject() when the operation is failed
 })
+
+
+const workPromise = new Promise((resolve,reject)=>{ 
+    $.get("https://jsonplaceholder.typicode.com/posts",(data)=> {
+        // console.log(data);
+        resolve(data)
+
+    }).fail(err => {
+        console.log(err)
+        reject(`Get Posts Failed with ${err.status}`)
+    })
+})
+
+workPromise
+.then(response=> {
+    console.log(response)
+})
+.catch(error => {
+    console.log("error from promise",error)
+})
+
+
+Working with axios makes it easier
 */
