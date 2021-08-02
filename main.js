@@ -901,47 +901,47 @@ $(document).ready(function(){
 
 
 // $(document).ready(function(){
-    // var list = $('#todo-list')
-    // var addItem = $('#add-item')
-    // var  list = $('#todo-list')
-    // var justAnElement = "<li>Make a change</li>"
-    // list.append(justAnElement)//can also append multiple elements
+// var list = $('#todo-list')
+// var addItem = $('#add-item')
+// var  list = $('#todo-list')
+// var justAnElement = "<li>Make a change</li>"
+// list.append(justAnElement)//can also append multiple elements
 
-    // var elementList = $('#first-thing').html()
-    // console.log(elementList)
-    //Remove elements using JQuery
-    // list.remove();
-    // Method chaining in jquery
-    // $('li').first().remove() remove item from first position
-    // $('li').last().remove() removes item from last position
-    // $('li').eq(0).remove() removes item from specified position
+// var elementList = $('#first-thing').html()
+// console.log(elementList)
+//Remove elements using JQuery
+// list.remove();
+// Method chaining in jquery
+// $('li').first().remove() remove item from first position
+// $('li').last().remove() removes item from last position
+// $('li').eq(0).remove() removes item from specified position
 
-    //.css() method jquery
-    //check specific style
-    // console.log($('li').css('font-size'))
-    //add style to elements
-    // $('li').css('font-size','40px')
-    //multiple styles pass object
-    // $('li').css({
-    //     'font-size':'40px',
-    //     'color': 'blue',
-    // })
-    //addClass()
-    // $('body').addClass('dark-mode')
+//.css() method jquery
+//check specific style
+// console.log($('li').css('font-size'))
+//add style to elements
+// $('li').css('font-size','40px')
+//multiple styles pass object
+// $('li').css({
+//     'font-size':'40px',
+//     'color': 'blue',
+// })
+//addClass()
+// $('body').addClass('dark-mode')
 
-    // setTimeout(function(){
-    //     $('body').removeClass('dark-mode')
-    // },1000)
+// setTimeout(function(){
+//     $('body').removeClass('dark-mode')
+// },1000)
 
-    //toggle class
-    // setInterval(function(){
-    //     $('body').toggleClass('dark-mode')
-    // },2000)
+//toggle class
+// setInterval(function(){
+//     $('body').toggleClass('dark-mode')
+// },2000)
 
-    //HTML events
-    // $('#btn-add').click(function(){
-    //    //code here after button
-    // })
+//HTML events
+// $('#btn-add').click(function(){
+//    //code here after button
+// })
 
 // })
 
@@ -1147,3 +1147,225 @@ workPromise
 
 Working with axios makes it easier
 */
+
+/********************************************
+ * Callbacks practice
+ * 
+ * simple call back example
+ * 
+ * 
+const posts = [
+    {title:"Post 1" ,body:"post 1 on callbacks"},
+    {title:"Post 2" ,body:"post 2 on callbacks"}
+]
+
+function getPosts(){
+    setTimeout(()=>{
+        let output = "";
+        posts.forEach((post,index)=> {
+            output += `<li>${post.title}</li>`
+            
+        })
+        document.body.innerHTML = output
+    },1000)
+}
+
+function createPost(post,callback){
+    setTimeout(()=>{
+        posts.push(post)
+        callback()
+    },2000)
+}
+
+// getPosts();
+
+createPost({title:"Post 3",body:"post 3 on callbacks"},getPosts);
+
+ ************************************************
+ *promises
+ *
+ * 
+
+
+const posts = [
+    {title:"Post 1" ,body:"post 1 on callbacks"},
+    {title:"Post 2" ,body:"post 2 on callbacks"}
+]
+
+function getPosts(){
+    setTimeout(()=>{
+        let output = "";
+        posts.forEach((post,index)=> {
+            output += `<li>${post.title}</li>`
+            
+        })
+        document.body.innerHTML = output
+    },1000)
+}
+
+function createPost(post){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            posts.push(post)
+            resolve();
+        },2000)
+    })
+    
+}
+
+createPost({title:"Post 3",body:"post 3 on callbacks"}).then(getPosts)
+
+ */
+
+/****************************************************************************
+ * AXIOS LIBRARY
+
+*/
+
+$(document).ready(() => {
+
+    //axios globals
+    axios.defaults.headers.common['X-Auth-Token'] = 
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+    
+    //Functions
+    let getTodos = () => {
+        // axios({
+        //     method: 'get',
+        //     url:'https://jsonplaceholder.typicode.com/todos',
+        //     params:{
+        //         _limit:5
+        //     }
+        // })
+        //     .then(res => showOutput(res))
+        //     .catch(err => console.log(err));
+
+        //Shorter method
+        axios
+            .get('https://jsonplaceholder.typicode.com/todos?_limit=5')
+            .then(res => showOutput(res))
+            .catch(err => console.log(err));
+    }
+
+    let postTodos = () => {
+        axios
+            .post('https://jsonplaceholder.typicode.com/todos', {
+                title: 'New todo',
+                completed: false
+            })
+            .then(res => showOutput(res))
+            .catch(err => console.log(err));
+    }
+
+    let updateTodos = () => {
+        axios
+            .patch('https://jsonplaceholder.typicode.com/todos/1', {
+                title: 'Updated todo',
+                completed: true
+            })
+            .then(res => showOutput(res))
+            .catch(err => console.log(err))
+    }
+
+    let deleteTodos = () => {
+        axios
+            .delete('https://jsonplaceholder.typicode.com/todos/1')
+            .then(res => showOutput(res))
+            .catch(err => console.log(err))
+    }
+
+    //SIMULTANIOUS DATA => MAKING SIMULTANIOUS REQUESTS
+    let getData = () => {
+        axios.all([
+                axios.get('https://jsonplaceholder.typicode.com/todos?_limit=5'),
+                axios.get('https://jsonplaceholder.typicode.com/posts?_limit=5')
+            ])
+            .then(axios.spread((todos, posts) => showOutput(posts)))
+    }
+
+    let customHeaders = () => {
+        let config = {
+            headers : {
+                'Content-Type' : 'application/json',
+                Authorization : 'tokenAuth',
+            },
+        }
+        axios
+            .post('https://jsonplaceholder.typicode.com/todos', {
+                title: 'New todo',
+                completed: false
+            },config)
+            .then(res => showOutput(res))
+            .catch(err => console.log(err));
+    }
+
+    let transformResponse = () => {
+        console.log("POST todos")
+    }
+
+    let errorHandling = () => {
+        console.log("TRANSFORM HEADERS")
+    }
+
+    let cancelToken = () => {
+        console.log("cancel")
+    }
+
+
+    //Intercept requests and responses
+    // can be used to create logs and such
+
+    axios.interceptors.request.use(config => {
+        console.log(`${config.method.toUpperCase()} request sent to ${config.url}`);
+        return config
+    },error => {
+        return Promise.reject(error)
+    })
+
+    // Show output in browser
+    function showOutput(res) {
+        document.getElementById('res').innerHTML = `
+    <div class="card card-body mb-4">
+      <h5>Status: ${res.status}</h5>
+    </div>
+    <div class="card mt-3">
+      <div class="card-header">
+        Headers
+      </div>
+      <div class="card-body">
+        <pre>${JSON.stringify(res.headers, null, 2)}</pre>
+      </div>
+    </div>
+    <div class="card mt-3">
+      <div class="card-header">
+        Data
+      </div>
+      <div class="card-body">
+        <pre>${JSON.stringify(res.data, null, 2)}</pre>
+      </div>
+    </div>
+    <div class="card mt-3">
+      <div class="card-header">
+        Config
+      </div>
+      <div class="card-body">
+        <pre>${JSON.stringify(res.config, null, 2)}</pre>
+      </div>
+    </div>
+  `;
+    }
+
+    //event listeners
+    document.getElementById("get").addEventListener("click", getTodos);
+    document.getElementById("post").addEventListener("click", postTodos);
+    document.getElementById("update").addEventListener("click", updateTodos);
+    document.getElementById("delete").addEventListener("click", deleteTodos);
+    document.getElementById("sim-requests").addEventListener("click", getData);
+    document.getElementById("custom-headers").addEventListener("click", customHeaders);
+    document.getElementById("transform").addEventListener("click", transformResponse);
+    document.getElementById("error-handling").addEventListener("click", errorHandling);
+    document.getElementById("cancel").addEventListener("click", cancelToken);
+
+})
+
+ 

@@ -14,6 +14,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <link rel="stylesheet" href="main.css">
     <title>Document</title>
 </head>
@@ -251,8 +253,8 @@ PIANO CHALLENGE END-->
                 <label class="form-label" for="add-item">Add Item</label>
             </div> -->
 
-            <!-- Submit button -->
-            <!-- <button type="submit" class="btn btn-primary btn-block mb-4" id="btn-add">Add Item</button>
+    <!-- Submit button -->
+    <!-- <button type="submit" class="btn btn-primary btn-block mb-4" id="btn-add">Add Item</button>
         </form>
 
         <div>
@@ -268,6 +270,21 @@ PIANO CHALLENGE END-->
 
     <!-- <script type="text/javascript" src="main.js"></script> -->
     <!-- MDB -->
+    <div class="container">
+
+        <button type="submit" id="get" class="btn btn-primary">GET</button>
+        <button type="submit" id="post" class="btn btn-success">POST</button>
+        <button type="submit" id="update" class="btn btn-warning">PATCH/PUT</button>
+        <button type="submit" id="delete" class="btn btn-danger">DELETE</button>
+        <button type="submit" id="sim-requests" class="btn">SIM REQUESTS</button>
+        <button type="submit" id="custom-headers" class="btn">CUSTOM HEADERS</button>
+        <button type="submit" id="transform" class="btn">TRANSFORM</button>
+        <button type="submit" id="error-handling" class="btn">ERROR HANDLING</button>
+        <button type="submit" id="cancel" class="btn">CANCEL</button>
+        <hr>
+        <div id="res"></div>
+    </div>
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
 </body>
 
